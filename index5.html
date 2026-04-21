@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1360">
+    <!-- 브라우저 뷰포트 너비를 1360px로 고정하여 페이지를 그리도록 설정 -->
+    <title>모모북클럽</title>
+    <!-- favicon -->
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <!-- webfont 연결-->
+    <link rel="stylesheet" href="Suite.css">
+    <!-- css 연결-->
+
+    <!-- aos 연결 -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- 외부 css 연결 -->
+    <link rel="stylesheet" href="css/style5.css">
+
+    <!-- js css 연결 -->
+    <link rel="stylesheet" href="./css/swiper-bundle.min.css" />
+</head>
+
+<body>
+
+    <div id="wrap">
+
+        <!-- header 시작 -->
+        <div id="header">
+            <div class="inner_header">
+                <h1><a href="index.html"><img src="./images/community/01.logo/logo.svg" alt="logo" class="logo_img"></a>
+                </h1>
+                <ul class="gnb">
+                    <li>
+                        <a href="index2.html">브랜드</a>
+                        <ul class="submenu">
+                            <li><a href="index2.html">브랜드스토리</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index3.html">북클럽</a>
+                        <ul class="submenu">
+                            <li><a href="index3.html">멤버십 안내</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index4.html">이달의 책장</a>
+                        <ul class="submenu">
+                            <li><a href="index4.html">이달의 도서</a></li>
+                            <li><a href="index4.html?tab=Board02">큐레이션</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="index5.html">커뮤니티</a>
+                        <ul class="submenu">
+                            <li><a href="index5.html">독서모임 안내</a></li>
+                            <li><a href="#" onclick="openBoardFromHeader('Board02')">이벤트</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <div class="search_wrap">
+                    <div class="search_bar">
+                        <form action="" method="post">
+                            <input type="text" name="search" id="search" placeholder="">
+                        </form>
+                        <a href="#"><img src="./images/community/02.header/icon-2.svg" alt="아이콘"
+                                class="search_icon"></a>
+                    </div>
+                    <div class="login_wrap">
+                        <a href="#"><img src="./images/community/02.header/icon-1.svg" alt="login"
+                                class="login_icon"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- visual 시작 -->
+        <div id="visual">
+            <div class="inner-visual">
+                <h2 class="text">이 달의 책장</h2>
+                <div class="img-wrap">
+                    <img src="./images/community/03.visual/text.png" alt="먼슬리텍스트">
+                </div>
+            </div>
+        </div>
+
+
+        <!-- tab 버튼 시작 -->
+        <div id="tab-wrap">
+            <ul id="tab-box">
+                <li class="tab tablink opacity" onclick="openBoard(event,'Board01')">모임 안내</li>
+                <li class="tab tablink" onclick="openBoard(event,'Board02')">이벤트</li>
+            </ul>
+
+            <!-- tab 컨텐츠 내용 -->
+            <!-- 활성화 되어있지 않은 탭의 컨텐츠는 display:none;해서 숨김처리 해놓는다. -->
+            <div id="Board01" class="box1_1 board">
+                <div class="inner-board1">
+
+                    <!-- section1 시작 -->
+                    <div class="meetup-wrap" >
+                        <div class="inner-meetup" data-aos="fade-up" data-aos-duration="1500">
+                            <h1 class="text" >북클럽 일정 전체보기</h1>
+                            <div class="flex">
+                                <div class="date">
+                                    <div class="calendar-nav">
+                                        <div class="horizontal">
+                                            <div class="font">
+                                                <span id="calYear"></span>
+                                                <span id="calMonth"></span>
+                                            </div>
+                                            <div onclick="prevCalendar();" class="arrow-left">
+                                                <img src="./images/community/04.board01/01.section1/arrow-icon1.svg"
+                                                    alt="left">
+                                            </div>
+                                            <div onclick="nextCalendar();" class="arrow-right">
+                                                <img src="./images/community/04.board01/01.section1/arrow-icon2.svg"
+                                                    alt="right">
+                                            </div>
+                                        </div>
+                                        <div class="text1">
+                                            <img src="./images/community/04.board01/01.section1/icon6.svg" alt="icon">
+                                            &nbsp;&nbsp;모임
+                                        </div>
+                                        <div class="text2">
+                                            <img src="./images/community/04.board01/01.section1/icon7.svg" alt="icon">
+                                            &nbsp;&nbsp;강연
+                                        </div>
+                                    </div>
+                                    <table class="Calendar">
+                                        <thead>
+
+                                            <tr>
+                                                <td>일</td>
+                                                <td>월</td>
+                                                <td>화</td>
+                                                <td>수</td>
+                                                <td>목</td>
+                                                <td>금</td>
+                                                <td>토</td>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <div class="meetup-text">
+                                    <div class="icon-wrap">
+                                        <a href="#"><img src="./images/community/04.board01/01.section1/icon1.svg"
+                                                alt="공유하기"></a>
+                                    </div>
+                                    <p class="name">확신을 내려놓는 고요한 시간</p>
+                                    <div class="book-wrap">
+                                        <div class="book-img">
+                                            <img src="./images/community/04.board01/01.section1/book-img.jpg" alt="책">
+                                        </div>
+                                        <div class="text-wrap">
+                                            <h3>철학의 문제들</h3>
+                                            <p class="place">장소 : 채그로</p>
+                                            <p class="time">시간 : 6. 27 (토) 11:00</p>
+                                            <p class="people">인원 : 7명 - 14명</p>
+                                        </div>
+                                    </div>
+                                    <div class="button-wrap">
+                                        <a href="#" class="st-button">참여하기</a>
+                                        <a href="#" class="nd-button"><img
+                                                src="./images/community/04.board01/01.section1/icon5.svg"
+                                                alt="아이콘">&nbsp;&nbsp;0</a>
+                                    </div>
+                                    <p class="medium">* 멤버십 회원만 신청할 수 있습니다.</p>
+                                    <p class="medium">* 독서 모임은 5,000원의 참가비를 받고 있습니다.</p>
+                                    <p class="medium">* 멤버십 회원은 1회 무료로 참가할 수 있습니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- section2 시작 -->
+                    <div class="review-wrap" data-aos="fade-up" data-aos-duration="1500">
+                        <div class="inner-rv-wrap">
+                            <div class="title">
+                                <h1 class="text">모임 후기</h1>
+                                <a class="hover" href="#">모임 후기 더보기 +</a>
+                                <div>
+                                    <a href="#" class="hashtag">#MOMO</a>
+                                    <a href="#" class="hashtag">#Bookclub</a>
+                                    <a href="#" class="hashtag">#혼자 읽지만 함께 머문 시간들</a>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="img_wrap">
+                                        <div class="hidden">
+                                            <img class="img" src="./images/community/04.board01/02.section2/rv-img1.png" alt="이미지">
+                                        </div>
+                                        <img class="person" src="./images/community/04.board01/02.section2/person1.png" alt="프로필">
+                                    </div>
+                                    <div class="text_wrap">
+                                        <img src="./images/community/04.board01/02.section2/icon.svg" alt="아이콘">
+                                        <p class="rv">혼자 읽을 땐 그냥 흘려보냈던 문장들이었는데, 오늘 멤버들과 나누면서 다들 마음속에 하나씩 소중히 갈무리해둔 것
+                                            같아요. 올겨울, 든든 …</p>
+                                        <p class="writer">by. 김&nbsp;*&nbsp;*</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <div class="hidden">
+                                            <img class="img" src="./images/community/04.board01/02.section2/rv-img2.png" alt="이미지">
+                                        </div>
+                                        <img class="person" src="./images/community/04.board01/02.section2/person2.png" alt="프로필">
+                                    </div>
+                                    <div class="text_wrap">
+                                        <img src="./images/community/04.board01/02.section2/icon.svg" alt="아이콘">
+                                        <p class="rv">특히 기억에 남는 건, 다들 커피 한 잔에 담긴 의미를 다르게 느끼고 있다는 거였어요. 어떤 사람은 휴식, 어떤 사람은
+                                            위로, 또 어떤 사람은 …</p>
+                                        <p class="writer">by. 박&nbsp;*&nbsp;*</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <div class="hidden">
+                                            <img class="img" src="./images/community/04.board01/02.section2/rv-img3.png" alt="이미지">
+                                        </div>
+                                        <img class="person" src="./images/community/04.board01/02.section2/person3.png" alt="프로필">
+                                    </div>
+                                    <div class="text_wrap">
+                                        <img src="./images/community/04.board01/02.section2/icon.svg" alt="아이콘">
+                                        <p class="rv">처음에는 다들 “영화가 더 화려하고 좋지 않나?” 이런 얘기로 시작했는데, 얘기하다 보니까 점점 책이 더 좋다는 쪽으로
+                                            기울었어요. 특히…</p>
+                                        <p class="writer">by. 최&nbsp;*&nbsp;*</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <div class="hidden">
+                                            <img class="img" src="./images/community/04.board01/02.section2/rv-img4.png" alt="이미지">
+                                        </div>
+                                        <img class="person" src="./images/community/04.board01/02.section2/person4.png" alt="프로필">
+                                    </div>
+                                    <div class="text_wrap">
+                                        <img src="./images/community/04.board01/02.section2/icon.svg" alt="아이콘">
+                                        <p class="rv">중간에 각자 마음에 남은 문장 하나씩 읽어보는 시간을 가졌는데, 같은 책인데도 다들 고른 문장이 완전 다 달라서
+                                            신기했어요. 그 사람의 상…</p>
+                                        <p class="writer">by. 한&nbsp;*&nbsp;*</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <div class="hidden">
+                                            <img class="img" src="./images/community/04.board01/02.section2/rv-img5.png" alt="이미지">
+                                        </div>
+                                        <img class="person" src="./images/community/04.board01/02.section2/person5.png" alt="프로필">
+                                    </div>
+                                    <div class="text_wrap">
+                                        <img src="./images/community/04.board01/02.section2/icon.svg" alt="아이콘">
+                                        <p class="rv">누군가는 그냥 판타지 동화처럼 봤다고 하고, 누군가는 이게 현실 풍자 같다고 하고, 또 어떤 사람은 앨리스의 성장
+                                            이야기라고 봤어요. 같…</p>
+                                        <p class="writer">by. 이&nbsp;*&nbsp;*</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="img_wrap">
+                                        <div class="hidden">
+                                            <img class="img" src="./images/community/04.board01/02.section2/rv-img6.png" alt="이미지">
+                                        </div>
+                                        <img class="person" src="./images/community/04.board01/02.section2/person6.png" alt="프로필">
+                                    </div>
+                                    <div class="text_wrap">
+                                        <img src="./images/community/04.board01/02.section2/icon.svg" alt="아이콘">
+                                        <p class="rv">이야기하다 보니까 ‘사라진 것’이라는 게 꼭 물리적인 게 아니라, 관계나 감정, 어떤 시절 같은 것들이 더 크게
+                                            다가왔습니다. 다들 각자 떠 …</p>
+                                        <p class="writer">by. 김&nbsp;*&nbsp;*</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Board02 시작 -->
+            <div id="Board02" class="box1_1 board" style="display: none;">
+                <div class="event-wrap">
+                    <ul class="inner-event-wrap">
+                        <li class="event1">
+                            <div class="img-wrap">
+                                <img src="./images/community/05.board02/event1.jpg" alt="event">
+                            </div>
+                            <p class="event-text">
+                                MOMO와 시작하는 첫 번째 기록, 웰컴 굿즈 증정!
+                            </p>
+                            <p class="color">2026-06-01</p>
+                        </li>
+                        <li class="event2">
+                            <div class="img-wrap">
+                                <img src="./images/community/05.board02/event2.jpg" alt="event">
+                            </div>
+                            <p class="event-text">
+                                리뷰 이벤트! 모임 후기 작성 시 이달의 책 한 권 증정!
+                            </p>
+                            <p class="color">2026-06-01</p>
+                        </li>
+                        <li  class="event3">
+                            <div class="img-wrap">
+                                <img src="./images/community/05.board02/event3.jpg" alt="event">
+                            </div>
+                            <p class="event-text">
+                                시민 공원에서 펼쳐지는 북 페스티벌! 참여 시 경품 증정 혜택!
+                            </p>
+                            <p class="color">2026-06-01</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+
+        
+        <!-- footer 시작 -->
+
+        <div id="footer">
+            <div class="inner_footer">
+                <div class="footer_img_wrap">
+                    <a href="index.html"><img src="./images/brandstory/07.footer/logo.svg" alt="logo"></a>
+                </div>
+                <ul class="sns_icon">
+                    <li>
+                        <a href="https://www.facebook.com/?locale=ko_KR">
+                            <img src="./images/brandstory/07.footer/facebook-icon.svg" alt="페이스북">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://secure.instagram.com/accounts/login/?hl=ko">
+                            <img src="./images/brandstory/07.footer/insta-icon.svg" alt="인스타">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/?reload=9&hl=ko&gl=KR&app=desktop">
+                            <img src="./images/brandstory/07.footer/youtube-icon.svg" alt="유튜브">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.kakaocorp.com/page/service/service/KakaoTalk">
+                            <img src="./images/brandstory/07.footer/kakao-icon.svg" alt="카카오톡">
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="footer_link">
+                    <li><a href="#">개인정보처리방침</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#">제휴신청</a></li>
+                </ul>
+
+                <p class="footer_text">DISCOVER THE SENTENCES THAT MOVE YOU.</p>
+                <div class="footer_address">
+                    <p>부산광역시 중구 중앙대로 26 10층 (우)48942</p>
+                    <p>T : 051-123-1234 MAIL : momobookclub@gmail.com</p>
+                    <p>Copyright © MOMOBookclub. All Right Reserved</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+
+
+
+    <!-- jQuery 오픈 소스 : 로컬방식 -->
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/jquery-4.0.0.min.js"></script>
+    <script src="./js/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- 제어코드 -->
+    <script src="./js/script5.js"></script>
+
+</body>
